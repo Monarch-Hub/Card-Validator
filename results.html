@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validation in Progress</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    
+    <script defer src="assets/js/app.js"></script>
+</head>
+<body>
+    
+    <div class="wrapper">
+        
+    <div class="progress">
+      <div class="progress__fill"></div>
+      <span class="progress__text">0%</span>
+    </div>
+    
+    <div class="results">
+        <li class="first">Getting information.....</li>
+        <li>Analyzing Data ...</li>
+        <li>Information Filtered ....</li>
+        <li>Finishing Up.......</li>
+        <li>Getting Results .......</li>
+        <li style="color: #00c203">Completed Successfully....</li>
+        <li style="color: #00c203">Your Card is completely safe !!</li>
+    </div>
+    
+    </div>
+    
+    <script>
+        
+        // Progress Bar
+
+function updateProgressBar(progressBar, value) {
+  value = Math.round(value);
+  progressBar.querySelector(".progress__fill").style.width = `${value}%`;
+  progressBar.querySelector(".progress__text").textContent = `${value}%`;
+}
+
+const pb = document.querySelector(".progress");
+const li = document.querySelector(".first")
+
+setTimeout(() => {
+    li.style.marginTop = -30 + "px";
+    updateProgressBar(pb, 30)
+}, 2000)
+
+setTimeout(() => {
+    li.style.marginTop = -60 + "px";
+    updateProgressBar(pb, 45)
+}, 4000)
+
+setTimeout(() => {
+    li.style.marginTop = -90 + "px";
+    updateProgressBar(pb, 55)
+}, 6000)
+
+setTimeout(() => {
+    li.style.marginTop = -120 + "px";
+    updateProgressBar(pb, 70)
+}, 8000)
+
+setTimeout(() => {
+    li.style.marginTop = -150 + "px";
+    updateProgressBar(pb, 100)
+}, 12000)
+
+setTimeout(() => {
+    li.style.marginTop = -180 + "px";
+    updateProgressBar(pb, 100)
+}, 14000)
+
+
+// End of Progress Bar
+    </script>
+</body>
+</html>
